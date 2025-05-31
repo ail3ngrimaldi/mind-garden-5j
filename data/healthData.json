@@ -1,0 +1,37 @@
+[
+  {
+    "steps": 8420,
+    "heartRate": 72,
+    "distance": 6.2
+  },
+  {
+    "steps": 3250,
+    "heartRate": 85,
+    "distance": 1.8
+  },
+  {
+    "steps": 12500,
+    "heartRate": 68,
+    "distance": 8.7
+  },
+  {
+    "steps": 5680,
+    "heartRate": 75,
+    "distance": 3.9
+  },
+  {
+    "steps": 9870,
+    "heartRate": 70,
+    "distance": 7.1
+  },
+  {
+    "steps": 2100,
+    "heartRate": 90,
+    "distance": 0.9
+  },
+  {
+    "steps": 15200,
+    "heartRate": 65,
+    "distance": 10.5
+  }
+]
