@@ -161,23 +161,23 @@ export function MindGardenProvider({ children }: { children: ReactNode }) {
 
   // History
   const [moodHistory, setMoodHistory] = useState<MoodEntry[]>([
-    { date: "2024-01-01", mood: "happy", habitsCompleted: ["Share your joy with someone"] },
-    { date: "2024-01-02", mood: "thoughtful", habitsCompleted: ["Practice mindful meditation for 10 minutes"] },
+    { date: "2025-05-05", mood: "happy", habitsCompleted: ["Share your joy with someone"] },
+    { date: "2025-05-04", mood: "thoughtful", habitsCompleted: ["Practice mindful meditation for 10 minutes"] },
     {
-      date: "2024-01-03",
+      date: "2025-05-03",
       mood: "excited",
       habitsCompleted: ["Share your excitement with someone", "Start a new creative project"],
     },
   ])
   const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([
     {
-      date: "2024-06-26",
+      date: "2025-05-26",
       content:
         "Today was an incredible day! I finally got the promotion I've been working towards for months. All the late nights and extra effort have paid off. I'm feeling so grateful and excited about this new chapter in my career.",
       title: "Just got a promotion at work",
     },
     {
-      date: "2024-01-02",
+      date: "2025-05-02",
       content:
         "Today I realized how important it is to take time for reflection. Sometimes we get so caught up in the hustle that we forget to pause and appreciate how far we've come.",
       title: "Reflection on growth",
