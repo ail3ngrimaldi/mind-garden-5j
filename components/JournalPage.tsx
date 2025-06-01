@@ -41,15 +41,6 @@ export function JournalPage() {
     })
   }
 
-  const formatInputDate = (dateString: string) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    })
-  }
-
   return (
     <div className="space-y-6 p-4 pb-24">
       <div className="text-center">
@@ -72,16 +63,17 @@ export function JournalPage() {
         />
 
         {/* Date Input */}
-        <div className="relative">
+        <div>
+          <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
+            Date
+          </label>
           <input
             type="date"
+            id="date"
             value={currentDate}
             onChange={(e) => setCurrentDate(e.target.value)}
-            className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#A8D5BA] focus:border-transparent text-gray-600 appearance-none"
+            className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#A8D5BA] focus:border-transparent text-gray-600"
           />
-          <div className="absolute inset-0 flex items-center px-4 pointer-events-none text-gray-600">
-            {formatInputDate(currentDate)}
-          </div>
         </div>
 
         {/* Content Textarea */}

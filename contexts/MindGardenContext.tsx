@@ -7,6 +7,7 @@ import healthDataSamples from "@/data/healthData.json"
 interface UserProfile {
   name: string
   goals: string[]
+  email?: string
 }
 
 interface MoodEntry {
