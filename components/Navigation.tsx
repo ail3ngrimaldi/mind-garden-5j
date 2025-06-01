@@ -1,6 +1,6 @@
 "use client"
 
-import { Home, BookOpen, Gift, User } from "lucide-react"
+import { Sprout, Gift, BookOpen, User } from "lucide-react"
 
 interface NavigationProps {
   currentPage: "home" | "journal" | "rewards" | "profile"
@@ -9,25 +9,25 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onPageChange }: NavigationProps) {
   const navItems = [
-    { id: "home" as const, icon: Home, label: "Home" },
-    { id: "journal" as const, icon: BookOpen, label: "Journal" },
+    { id: "home" as const, icon: Sprout, label: "Garden" },
     { id: "rewards" as const, icon: Gift, label: "Rewards" },
+    { id: "journal" as const, icon: BookOpen, label: "Journal" },
     { id: "profile" as const, icon: User, label: "Profile" },
   ]
 
   return (
-    <nav className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md bg-white/95 backdrop-blur-sm border-t border-gray-200">
-      <div className="flex justify-around py-3">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+      <div className="flex justify-around py-2">
         {navItems.map(({ id, icon: Icon, label }) => (
           <button
             key={id}
             onClick={() => onPageChange(id)}
             className={`flex flex-col items-center p-2 rounded-lg transition-colors ${
-              currentPage === id ? "text-[#A8D5BA] bg-[#A8D5BA]/10" : "text-gray-500 hover:text-[#A8D5BA]"
+              currentPage === id ? "text-[#5C9E7C]" : "text-gray-500"
             }`}
           >
-            <Icon size={22} />
-            <span className="text-xs mt-1 font-medium">{label}</span>
+            <Icon size={20} />
+            <span className="text-xs mt-1">{label}</span>
           </button>
         ))}
       </div>

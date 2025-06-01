@@ -63,17 +63,25 @@ export function QuickMoodCheck() {
           <h4 className="font-semibold text-gray-800 mb-3">
             Suggested habits for feeling {selectedMood.label.toLowerCase()}:
           </h4>
-          <div className="space-y-2">
+          <div className="space-y-3">
             {generatedHabits.map((habit) => (
               <label
                 key={habit}
-                className="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 hover:bg-gray-50 cursor-pointer transition-colors"
+                className="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 hover:bg-gray-50 cursor-pointer transition-colors focus-within:ring-2 focus-within:ring-[#A8D5BA] focus-within:ring-offset-2"
               >
+                <div
+                  className={`w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center ${
+                    completedHabits.includes(habit) ? "bg-[#A8D5BA] border-[#A8D5BA]" : ""
+                  }`}
+                >
+                  {completedHabits.includes(habit) && <span className="text-white text-xs font-bold">✓</span>}
+                </div>
                 <input
                   type="checkbox"
                   checked={completedHabits.includes(habit)}
                   onChange={() => toggleHabit(habit)}
-                  className="w-4 h-4 text-[#A8D5BA] rounded focus:ring-[#A8D5BA] focus:ring-2"
+                  className="sr-only"
+                  aria-label={`Complete habit: ${habit}`}
                 />
                 <span
                   className={`flex-1 text-sm ${

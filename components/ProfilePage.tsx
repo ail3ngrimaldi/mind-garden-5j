@@ -10,7 +10,7 @@ import { Card } from "./ui/Card"
 
 const moodEmojiMap: { [key: string]: string } = {
   exhausted: "😴",
-  burnout: "🔥",
+  burnout: "😵",
   sad: "😢",
   thoughtful: "🤔",
   neutral: "😐",
@@ -43,9 +43,9 @@ export function ProfilePage() {
       : "0"
 
   return (
-    <div className="space-y-6 p-4">
+    <div className="space-y-6 p-4 pb-24">
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Your Wellness Journey</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2 font-title">Your Wellness Journey</h2>
         <p className="text-gray-600">
           {userProfile.name ? `Hello, ${userProfile.name}` : "Insights and reflections on your growth"}
         </p>
@@ -54,7 +54,7 @@ export function ProfilePage() {
       {/* User Goals */}
       {userProfile.goals && userProfile.goals.length > 0 && (
         <Card className="bg-gradient-to-r from-[#A8D5BA]/10 to-[#C5CAE9]/10">
-          <h3 className="font-semibold text-gray-800 mb-2">My Wellness Goals</h3>
+          <h3 className="font-semibold text-gray-800 mb-2 font-title">My Wellness Goals</h3>
           <ul className="list-disc list-inside space-y-1">
             {userProfile.goals.map((goal, index) => (
               <li key={index} className="text-sm text-gray-700">
@@ -73,7 +73,10 @@ export function ProfilePage() {
       </div>
 
       {/* Health Metrics */}
-      <HealthMetrics />
+      <Card>
+        <h3 className="text-lg font-semibold text-gray-800 mb-4 font-title">Health Metrics</h3>
+        <HealthMetrics />
+      </Card>
 
       {/* Mood Trend */}
       <MoodTrendChart />
@@ -83,10 +86,15 @@ export function ProfilePage() {
 
       {/* Recent Activity */}
       <Card>
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Check-ins</h3>
+        <h3 className="text-lg font-semibold text-gray-800 mb-4 font-title">Recent Check-ins</h3>
         <div className="space-y-3">
           {moodHistory.slice(0, 5).map((entry, index) => (
-            <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div
+              key={index}
+              className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+              tabIndex={0}
+              role="listitem"
+            >
               <div className="flex items-center space-x-3">
                 <span className="text-2xl">{moodEmojiMap[entry.mood]}</span>
                 <div>

@@ -1,30 +1,76 @@
-# MindGarden+ MVP Prototype
+# MindGarden+ MVP
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+MindGarden+ is a wellness application that helps users track their mood, develop healthy habits, and visualize their mental health journey through a growing virtual garden. The app uses AI to provide personalized insights and suggestions based on the user's mood patterns, health metrics, and daily activities.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ail3ngrimaldis-projects/v0-mind-garden-mvp-prototype)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/dIN4QSW4H0L)
+## Features
 
-## Overview
+### 🌱 Virtual Garden
+- Watch your garden grow as you complete daily check-ins and habits
+- Garden visualization changes based on your progress level
+- Earn XP to level up your garden
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+### 😊 Mood Tracking
+- Daily mood check-ins with 8 different mood options
+- Personalized habit suggestions based on your current mood
+- Track mood trends over time with visual charts
 
-## Deployment
+### 🧠 AI-Powered Insights
+- Receive personalized wellness suggestions based on your mood patterns
+- Smart habit recommendations that adapt to your health data
+- Advanced pattern recognition to identify trends in your wellbeing
 
-Your project is live at:
+### 📝 Journal
+- Record your thoughts and reflections
+- Keep track of your wellness journey
+- Review past entries to see your progress
 
-**[https://vercel.com/ail3ngrimaldis-projects/v0-mind-garden-mvp-prototype](https://vercel.com/ail3ngrimaldis-projects/v0-mind-garden-mvp-prototype)**
+### 🏆 Rewards
+- Unlock achievements as you progress in your wellness journey
+- Earn badges and coupons for consistent check-ins
+- Celebrate your milestones
 
-## Build your app
+### 📊 Health Metrics
+- Track steps, heart rate, and distance
+- Monitor your activity levels, stress levels, and mobility
+- Receive tailored suggestions based on your health data
 
-Continue building your app on:
+## Getting Started
 
-**[https://v0.dev/chat/projects/dIN4QSW4H0L](https://v0.dev/chat/projects/dIN4QSW4H0L)**
+1. **Welcome Screen**: Accept the terms and conditions and click "Get Started"
+2. **Set Up Profile**: Enter your name and wellness goals
+3. **Daily Check-in**: Select your current mood on the home screen
+4. **Complete Habits**: Follow the AI-suggested habits based on your mood
+5. **Watch Your Garden Grow**: As you complete check-ins and habits, your garden will flourish
 
-## How It Works
+## Technical Details
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+MindGarden+ is built using:
+- Next.js (React framework)
+- TypeScript
+- Tailwind CSS for styling
+- Context API for state management
+
+## Development
+
+To run the project locally:
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Project Structure
+
+- `/app`: Next.js app router files
+- `/components`: React components
+- `/contexts`: Context providers for state management
+- `/data`: JSON data files for health metrics
+- `/public`: Static assets
+
+## Future Enhancements
+
+- Integration with wearable devices for real-time health data
+- Social sharing features to connect with friends
+- More garden customization options
+- Guided meditation and breathing exercises
+- Advanced analytics and insights
