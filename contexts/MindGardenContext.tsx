@@ -18,6 +18,7 @@ interface MoodEntry {
 interface JournalEntry {
   date: string
   content: string
+  title?: string
 }
 
 interface HealthData {
@@ -62,7 +63,7 @@ interface MindGardenContextType {
   // History
   moodHistory: MoodEntry[]
   journalEntries: JournalEntry[]
-  addJournalEntry: (content: string) => void
+  addJournalEntry: (content: string, title?: string, date?: string) => void
 
   // Health data
   healthData: HealthData
@@ -168,8 +169,18 @@ export function MindGardenProvider({ children }: { children: ReactNode }) {
     },
   ])
   const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([
-    { date: "2024-01-01", content: "Feeling grateful for this new journey of self-care and mindfulness." },
-    { date: "2024-01-02", content: "Today I realized how important it is to take time for reflection." },
+    {
+      date: "2024-06-26",
+      content:
+        "Today was an incredible day! I finally got the promotion I've been working towards for months. All the late nights and extra effort have paid off. I'm feeling so grateful and excited about this new chapter in my career.",
+      title: "Just got a promotion at work",
+    },
+    {
+      date: "2024-01-02",
+      content:
+        "Today I realized how important it is to take time for reflection. Sometimes we get so caught up in the hustle that we forget to pause and appreciate how far we've come.",
+      title: "Reflection on growth",
+    },
   ])
 
   // Health data
@@ -201,10 +212,11 @@ export function MindGardenProvider({ children }: { children: ReactNode }) {
     setCompletedHabits((prev) => (prev.includes(habit) ? prev.filter((h) => h !== habit) : [...prev, habit]))
   }
 
-  const addJournalEntry = (content: string) => {
+  const addJournalEntry = (content: string, title?: string, date?: string) => {
     const newEntry: JournalEntry = {
-      date: new Date().toISOString().split("T")[0],
+      date: date || new Date().toISOString().split("T")[0],
       content,
+      title,
     }
     setJournalEntries((prev) => [newEntry, ...prev])
   }
